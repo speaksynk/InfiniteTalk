@@ -59,6 +59,12 @@ RUN uv pip install misaki[en] ninja psutil packaging
 # Install flash_attn
 RUN uv pip install flash-attn==2.7.4.post1 --no-build-isolation
 
+RUN uv pip install hf_transfer
+
 # Copy application code
 COPY . .
 
+RUN huggingface-cli download Wan-AI/Wan2.1-I2V-14B-480P --local-dir ./weights/Wan2.1-I2V-14B-480P
+RUN huggingface-cli download TencentGameMate/chinese-wav2vec2-base --local-dir ./weights/chinese-wav2vec2-base
+RUN huggingface-cli download TencentGameMate/chinese-wav2vec2-base model.safetensors --revision refs/pr/1 --local-dir ./weights/chinese-wav2vec2-base
+RUN huggingface-cli download MeiGen-AI/InfiniteTalk --local-dir ./weights/InfiniteTalk

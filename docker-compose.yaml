@@ -4,7 +4,7 @@ services:
     volumes:
       # - .:/app
       # - ./.cache/huggingface:/root/.cache/huggingface
-      - D:/Windows/coding/speaksynk/workspace/workspace/weights:/app/weights
+      # - ./weights:/app/weights
       - ./output:/app/output
     # environment:
     #   - DEBIAN_FRONTEND=noninteractive
