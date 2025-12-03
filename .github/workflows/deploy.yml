@@ -10,7 +10,7 @@ env:
 
 jobs:
     docker:
-        runs-on: ubuntu-large
+        runs-on: self-hosted
 
         permissions:
             contents: read
